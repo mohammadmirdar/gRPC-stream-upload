@@ -1,20 +1,17 @@
 package com.example.samplegrpcapp
 
-import android.app.Activity
+import FileUtils
+import UploadStreamClient
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.samplegrpcapp.ProtoReply.Reply
-import io.grpc.ManagedChannel
-import io.grpc.ManagedChannelBuilder
-import io.grpc.stub.AbstractAsyncStub
-import io.grpc.stub.InternalClientCalls.StubType
 import io.grpc.stub.StreamObserver
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,10 +35,6 @@ class MainActivity : AppCompatActivity() {
         button_upload.setOnClickListener {
             uploadImage()
         }
-
-
-
-
     }
 
     private fun uploadImage() {
@@ -50,31 +43,11 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val managedChannel = ManagedChannelBuilder.forAddress("192.168.20.63", 30883)
-            .usePlaintext()
-            .build()
 
-        val fileInfoBuilder = ProtoFileInfo.FileInfo.newBuilder()
-        fileInfoBuilder.name = ""
-        fileInfoBuilder.size = 0
+        val uploadStreamClient = UploadStreamClient(this,"192.168.20.63", 30883)
 
-        ProtoRequest.Request.newBuilder().info
-        UploaderServiceGrpc.newStub(managedChannel).uploadStream(
-            object : StreamObserver<Reply> {
-                override fun onNext(value: Reply?) {
 
-                }
-
-                override fun onError(t: Throwable?) {
-
-                }
-
-                override fun onCompleted() {
-
-                }
-
-            }
-        )
+        uploadStreamClient.uploadFile(FileUtils.getFile(this, selectedImageUri)?.absolutePath)
     }
 
     private fun openImageChooser() {
@@ -88,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             when (requestCode) {
                 REQUEST_CODE_PICK_IMAGE -> {
                     selectedImageUri = data?.data
@@ -101,4 +74,5 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val REQUEST_CODE_PICK_IMAGE = 101
     }
+
 }
