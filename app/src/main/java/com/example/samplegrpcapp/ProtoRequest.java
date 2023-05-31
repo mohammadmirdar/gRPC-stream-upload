@@ -3,8 +3,8 @@
 
 package com.example.samplegrpcapp;
 
-public final class RequestOuterClass {
-  private RequestOuterClass() {}
+public final class ProtoRequest {
+  private ProtoRequest() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -15,7 +15,7 @@ public final class RequestOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface RequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.samplegrpcapp.Request)
+      // @@protoc_insertion_point(interface_extends:UploadFile.Request)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -55,11 +55,11 @@ public final class RequestOuterClass {
         getStreamBytes();
   }
   /**
-   * Protobuf type {@code com.example.samplegrpcapp.Request}
+   * Protobuf type {@code UploadFile.Request}
    */
   public static final class Request extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.samplegrpcapp.Request)
+      // @@protoc_insertion_point(message_implements:UploadFile.Request)
       RequestOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Request.newBuilder() to construct.
@@ -144,13 +144,13 @@ public final class RequestOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return RequestOuterClass.internal_static_com_example_samplegrpcapp_Request_descriptor;
+      return ProtoRequest.internal_static_UploadFile_Request_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return RequestOuterClass.internal_static_com_example_samplegrpcapp_Request_fieldAccessorTable
+      return ProtoRequest.internal_static_UploadFile_Request_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               Request.class, Builder.class);
     }
@@ -440,26 +440,26 @@ public final class RequestOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.samplegrpcapp.Request}
+     * Protobuf type {@code UploadFile.Request}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.samplegrpcapp.Request)
+        // @@protoc_insertion_point(builder_implements:UploadFile.Request)
         RequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return RequestOuterClass.internal_static_com_example_samplegrpcapp_Request_descriptor;
+        return ProtoRequest.internal_static_UploadFile_Request_descriptor;
       }
 
       @Override
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return RequestOuterClass.internal_static_com_example_samplegrpcapp_Request_fieldAccessorTable
+        return ProtoRequest.internal_static_UploadFile_Request_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 Request.class, Builder.class);
       }
 
-      // Construct using com.example.samplegrpcapp.RequestOuterClass.Request.newBuilder()
+      // Construct using com.example.samplegrpcapp.ProtoRequest.Request.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -491,7 +491,7 @@ public final class RequestOuterClass {
       @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return RequestOuterClass.internal_static_com_example_samplegrpcapp_Request_descriptor;
+        return ProtoRequest.internal_static_UploadFile_Request_descriptor;
       }
 
       @Override
@@ -832,10 +832,10 @@ public final class RequestOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.samplegrpcapp.Request)
+      // @@protoc_insertion_point(builder_scope:UploadFile.Request)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.samplegrpcapp.Request)
+    // @@protoc_insertion_point(class_scope:UploadFile.Request)
     private static final Request DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new Request();
@@ -873,10 +873,10 @@ public final class RequestOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_samplegrpcapp_Request_descriptor;
+    internal_static_UploadFile_Request_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_samplegrpcapp_Request_fieldAccessorTable;
+      internal_static_UploadFile_Request_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -886,19 +886,20 @@ public final class RequestOuterClass {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\rRequest.proto\022\031com.example.samplegrpca" +
-      "pp\"D\n\007Request\022\013\n\003oid\030\001 \001(\t\022\016\n\006offset\030\002 \001" +
-      "(\r\022\014\n\004size\030\003 \001(\r\022\016\n\006stream\030\004 \001(\tb\006proto3"
+      "\n\rRequest.proto\022\nUploadFile\"D\n\007Request\022\013" +
+      "\n\003oid\030\001 \001(\t\022\016\n\006offset\030\002 \001(\r\022\014\n\004size\030\003 \001(" +
+      "\r\022\016\n\006stream\030\004 \001(\tB)\n\031com.example.sampleg" +
+      "rpcappB\014ProtoRequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_com_example_samplegrpcapp_Request_descriptor =
+    internal_static_UploadFile_Request_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_example_samplegrpcapp_Request_fieldAccessorTable = new
+    internal_static_UploadFile_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_samplegrpcapp_Request_descriptor,
+        internal_static_UploadFile_Request_descriptor,
         new String[] { "Oid", "Offset", "Size", "Stream", });
   }
 

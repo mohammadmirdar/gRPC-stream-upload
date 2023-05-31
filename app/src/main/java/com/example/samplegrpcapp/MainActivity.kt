@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun uploadImage() {
-        if (selectedImageUri == null) {
-            Toast.makeText(this, "Select an Image First", Toast.LENGTH_SHORT).show()
-            return
-        }
-
+//        if (selectedImageUri == null) {
+//            Toast.makeText(this, "Select an Image First", Toast.LENGTH_SHORT).show()
+//            return
+//        }
+//
 
         val uploadStreamClient = UploadStreamClient(this,"192.168.20.63", 30883)
 

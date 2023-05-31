@@ -3,8 +3,8 @@
 
 package com.example.samplegrpcapp;
 
-public final class ResponseOuterClass {
-  private ResponseOuterClass() {}
+public final class ProtoResponse {
+  private ProtoResponse() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -15,7 +15,7 @@ public final class ResponseOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface ResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.samplegrpcapp.Response)
+      // @@protoc_insertion_point(interface_extends:UploadFile.Response)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -37,11 +37,11 @@ public final class ResponseOuterClass {
     int getSize();
   }
   /**
-   * Protobuf type {@code com.example.samplegrpcapp.Response}
+   * Protobuf type {@code UploadFile.Response}
    */
   public static final class Response extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.samplegrpcapp.Response)
+      // @@protoc_insertion_point(message_implements:UploadFile.Response)
       ResponseOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Response.newBuilder() to construct.
@@ -114,13 +114,13 @@ public final class ResponseOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ResponseOuterClass.internal_static_com_example_samplegrpcapp_Response_descriptor;
+      return ProtoResponse.internal_static_UploadFile_Response_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ResponseOuterClass.internal_static_com_example_samplegrpcapp_Response_fieldAccessorTable
+      return ProtoResponse.internal_static_UploadFile_Response_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               Response.class, Builder.class);
     }
@@ -340,26 +340,26 @@ public final class ResponseOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.samplegrpcapp.Response}
+     * Protobuf type {@code UploadFile.Response}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.samplegrpcapp.Response)
+        // @@protoc_insertion_point(builder_implements:UploadFile.Response)
         ResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ResponseOuterClass.internal_static_com_example_samplegrpcapp_Response_descriptor;
+        return ProtoResponse.internal_static_UploadFile_Response_descriptor;
       }
 
       @Override
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ResponseOuterClass.internal_static_com_example_samplegrpcapp_Response_fieldAccessorTable
+        return ProtoResponse.internal_static_UploadFile_Response_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 Response.class, Builder.class);
       }
 
-      // Construct using com.example.samplegrpcapp.ResponseOuterClass.Response.newBuilder()
+      // Construct using com.example.samplegrpcapp.ProtoResponse.Response.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -387,7 +387,7 @@ public final class ResponseOuterClass {
       @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ResponseOuterClass.internal_static_com_example_samplegrpcapp_Response_descriptor;
+        return ProtoResponse.internal_static_UploadFile_Response_descriptor;
       }
 
       @Override
@@ -612,10 +612,10 @@ public final class ResponseOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.samplegrpcapp.Response)
+      // @@protoc_insertion_point(builder_scope:UploadFile.Response)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.samplegrpcapp.Response)
+    // @@protoc_insertion_point(class_scope:UploadFile.Response)
     private static final Response DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new Response();
@@ -653,10 +653,10 @@ public final class ResponseOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_samplegrpcapp_Response_descriptor;
+    internal_static_UploadFile_Response_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_samplegrpcapp_Response_fieldAccessorTable;
+      internal_static_UploadFile_Response_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -666,19 +666,19 @@ public final class ResponseOuterClass {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\016Response.proto\022\031com.example.samplegrpc" +
-      "app\"$\n\010Response\022\n\n\002id\030\001 \001(\t\022\014\n\004size\030\002 \001(" +
-      "\rb\006proto3"
+      "\n\016Response.proto\022\nUploadFile\"$\n\010Response" +
+      "\022\n\n\002id\030\001 \001(\t\022\014\n\004size\030\002 \001(\rB*\n\031com.exampl" +
+      "e.samplegrpcappB\rProtoResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_com_example_samplegrpcapp_Response_descriptor =
+    internal_static_UploadFile_Response_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_example_samplegrpcapp_Response_fieldAccessorTable = new
+    internal_static_UploadFile_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_samplegrpcapp_Response_descriptor,
+        internal_static_UploadFile_Response_descriptor,
         new String[] { "Id", "Size", });
   }
 

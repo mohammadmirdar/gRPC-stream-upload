@@ -3,8 +3,8 @@
 
 package com.example.samplegrpcapp;
 
-public final class FileUpload {
-  private FileUpload() {}
+public final class ProtoUploadService {
+  private ProtoUploadService() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -23,22 +23,22 @@ public final class FileUpload {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\020FileUpload.proto\022\031com.example.samplegr" +
-      "pcapp\032\rRequest.proto\032\016Response.proto2\301\001\n" +
-      "\rUploadService\022U\n\006upload\022\".com.example.s" +
-      "amplegrpcapp.Request\032#.com.example.sampl" +
-      "egrpcapp.Response\"\000(\001\022Y\n\014upload_chunk\022\"." +
-      "com.example.samplegrpcapp.Request\032#.com." +
-      "example.samplegrpcapp.Response\"\000b\006proto3"
+      "\n\020FileUpload.proto\022\nUploadFile\032\rRequest." +
+      "proto\032\016Response.proto2\205\001\n\rUploadService\022" +
+      "7\n\006upload\022\023.UploadFile.Request\032\024.UploadF" +
+      "ile.Response\"\000(\001\022;\n\014upload_chunk\022\023.Uploa" +
+      "dFile.Request\032\024.UploadFile.Response\"\000B/\n" +
+      "\031com.example.samplegrpcappB\022ProtoUploadS" +
+      "erviceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          RequestOuterClass.getDescriptor(),
-          ResponseOuterClass.getDescriptor(),
+          ProtoRequest.getDescriptor(),
+          ProtoResponse.getDescriptor(),
         });
-    RequestOuterClass.getDescriptor();
-    ResponseOuterClass.getDescriptor();
+    ProtoRequest.getDescriptor();
+    ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

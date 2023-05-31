@@ -12,32 +12,32 @@ public final class UploadServiceGrpc {
 
   private UploadServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "com.example.samplegrpcapp.UploadService";
+  public static final String SERVICE_NAME = "UploadFile.UploadService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<RequestOuterClass.Request,
-      ResponseOuterClass.Response> getUploadMethod;
+  private static volatile io.grpc.MethodDescriptor<ProtoRequest.Request,
+      ProtoResponse.Response> getUploadMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "upload",
-      requestType = RequestOuterClass.Request.class,
-      responseType = ResponseOuterClass.Response.class,
+      requestType = ProtoRequest.Request.class,
+      responseType = ProtoResponse.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<RequestOuterClass.Request,
-      ResponseOuterClass.Response> getUploadMethod() {
-    io.grpc.MethodDescriptor<RequestOuterClass.Request, ResponseOuterClass.Response> getUploadMethod;
+  public static io.grpc.MethodDescriptor<ProtoRequest.Request,
+      ProtoResponse.Response> getUploadMethod() {
+    io.grpc.MethodDescriptor<ProtoRequest.Request, ProtoResponse.Response> getUploadMethod;
     if ((getUploadMethod = UploadServiceGrpc.getUploadMethod) == null) {
       synchronized (UploadServiceGrpc.class) {
         if ((getUploadMethod = UploadServiceGrpc.getUploadMethod) == null) {
           UploadServiceGrpc.getUploadMethod = getUploadMethod =
-              io.grpc.MethodDescriptor.<RequestOuterClass.Request, ResponseOuterClass.Response>newBuilder()
+              io.grpc.MethodDescriptor.<ProtoRequest.Request, ProtoResponse.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "upload"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  RequestOuterClass.Request.getDefaultInstance()))
+                  ProtoRequest.Request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ResponseOuterClass.Response.getDefaultInstance()))
+                  ProtoResponse.Response.getDefaultInstance()))
               .setSchemaDescriptor(new UploadServiceMethodDescriptorSupplier("upload"))
               .build();
         }
@@ -46,29 +46,29 @@ public final class UploadServiceGrpc {
     return getUploadMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<RequestOuterClass.Request,
-      ResponseOuterClass.Response> getUploadChunkMethod;
+  private static volatile io.grpc.MethodDescriptor<ProtoRequest.Request,
+      ProtoResponse.Response> getUploadChunkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "upload_chunk",
-      requestType = RequestOuterClass.Request.class,
-      responseType = ResponseOuterClass.Response.class,
+      requestType = ProtoRequest.Request.class,
+      responseType = ProtoResponse.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<RequestOuterClass.Request,
-      ResponseOuterClass.Response> getUploadChunkMethod() {
-    io.grpc.MethodDescriptor<RequestOuterClass.Request, ResponseOuterClass.Response> getUploadChunkMethod;
+  public static io.grpc.MethodDescriptor<ProtoRequest.Request,
+      ProtoResponse.Response> getUploadChunkMethod() {
+    io.grpc.MethodDescriptor<ProtoRequest.Request, ProtoResponse.Response> getUploadChunkMethod;
     if ((getUploadChunkMethod = UploadServiceGrpc.getUploadChunkMethod) == null) {
       synchronized (UploadServiceGrpc.class) {
         if ((getUploadChunkMethod = UploadServiceGrpc.getUploadChunkMethod) == null) {
           UploadServiceGrpc.getUploadChunkMethod = getUploadChunkMethod =
-              io.grpc.MethodDescriptor.<RequestOuterClass.Request, ResponseOuterClass.Response>newBuilder()
+              io.grpc.MethodDescriptor.<ProtoRequest.Request, ProtoResponse.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "upload_chunk"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  RequestOuterClass.Request.getDefaultInstance()))
+                  ProtoRequest.Request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ResponseOuterClass.Response.getDefaultInstance()))
+                  ProtoResponse.Response.getDefaultInstance()))
               .setSchemaDescriptor(new UploadServiceMethodDescriptorSupplier("upload_chunk"))
               .build();
         }
@@ -133,15 +133,15 @@ public final class UploadServiceGrpc {
      * Sends a upload
      * </pre>
      */
-    default io.grpc.stub.StreamObserver<RequestOuterClass.Request> upload(
-        io.grpc.stub.StreamObserver<ResponseOuterClass.Response> responseObserver) {
+    default io.grpc.stub.StreamObserver<ProtoRequest.Request> upload(
+        io.grpc.stub.StreamObserver<ProtoResponse.Response> responseObserver) {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getUploadMethod(), responseObserver);
     }
 
     /**
      */
-    default void uploadChunk(RequestOuterClass.Request request,
-                             io.grpc.stub.StreamObserver<ResponseOuterClass.Response> responseObserver) {
+    default void uploadChunk(ProtoRequest.Request request,
+                             io.grpc.stub.StreamObserver<ProtoResponse.Response> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadChunkMethod(), responseObserver);
     }
   }
@@ -184,16 +184,16 @@ public final class UploadServiceGrpc {
      * Sends a upload
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<RequestOuterClass.Request> upload(
-        io.grpc.stub.StreamObserver<ResponseOuterClass.Response> responseObserver) {
+    public io.grpc.stub.StreamObserver<ProtoRequest.Request> upload(
+        io.grpc.stub.StreamObserver<ProtoResponse.Response> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
           getChannel().newCall(getUploadMethod(), getCallOptions()), responseObserver);
     }
 
     /**
      */
-    public void uploadChunk(RequestOuterClass.Request request,
-                            io.grpc.stub.StreamObserver<ResponseOuterClass.Response> responseObserver) {
+    public void uploadChunk(ProtoRequest.Request request,
+                            io.grpc.stub.StreamObserver<ProtoResponse.Response> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUploadChunkMethod(), getCallOptions()), request, responseObserver);
     }
@@ -220,7 +220,7 @@ public final class UploadServiceGrpc {
 
     /**
      */
-    public ResponseOuterClass.Response uploadChunk(RequestOuterClass.Request request) {
+    public ProtoResponse.Response uploadChunk(ProtoRequest.Request request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUploadChunkMethod(), getCallOptions(), request);
     }
@@ -247,8 +247,8 @@ public final class UploadServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<ResponseOuterClass.Response> uploadChunk(
-        RequestOuterClass.Request request) {
+    public com.google.common.util.concurrent.ListenableFuture<ProtoResponse.Response> uploadChunk(
+        ProtoRequest.Request request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUploadChunkMethod(), getCallOptions()), request);
     }
@@ -275,8 +275,8 @@ public final class UploadServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_UPLOAD_CHUNK:
-          serviceImpl.uploadChunk((RequestOuterClass.Request) request,
-              (io.grpc.stub.StreamObserver<ResponseOuterClass.Response>) responseObserver);
+          serviceImpl.uploadChunk((ProtoRequest.Request) request,
+              (io.grpc.stub.StreamObserver<ProtoResponse.Response>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -290,7 +290,7 @@ public final class UploadServiceGrpc {
       switch (methodId) {
         case METHODID_UPLOAD:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.upload(
-              (io.grpc.stub.StreamObserver<ResponseOuterClass.Response>) responseObserver);
+              (io.grpc.stub.StreamObserver<ProtoResponse.Response>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -303,15 +303,15 @@ public final class UploadServiceGrpc {
           getUploadMethod(),
           io.grpc.stub.ServerCalls.asyncClientStreamingCall(
             new MethodHandlers<
-              RequestOuterClass.Request,
-              ResponseOuterClass.Response>(
+              ProtoRequest.Request,
+              ProtoResponse.Response>(
                 service, METHODID_UPLOAD)))
         .addMethod(
           getUploadChunkMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              RequestOuterClass.Request,
-              ResponseOuterClass.Response>(
+              ProtoRequest.Request,
+              ProtoResponse.Response>(
                 service, METHODID_UPLOAD_CHUNK)))
         .build();
   }
@@ -322,7 +322,7 @@ public final class UploadServiceGrpc {
 
     @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return FileUpload.getDescriptor();
+      return ProtoUploadService.getDescriptor();
     }
 
     @Override
